@@ -1,5 +1,3 @@
-function hola () {
-  return 'Hola';
-}
-
-export default hola
+export function hello () {
+  return 'Hello';
+};

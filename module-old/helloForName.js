@@ -1,4 +1,4 @@
-function helloForName ({name}) {
+function helloForName (name) {
   return `Hello ${name}`
 }
 

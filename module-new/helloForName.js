@@ -1,4 +1,4 @@
-export function helloForName ({name}) {
-  return `Hello ${name}`
-}
+export function helloForName (name) {
+  return `Hello ${name}`;
+};
 
