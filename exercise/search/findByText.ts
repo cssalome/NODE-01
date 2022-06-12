@@ -1,8 +1,12 @@
 import { IClub, clubes } from "../create";
+import { IResponseClubes } from "./findAll";
 
-export const findByText = (text: string): IClub[] => {
+export const findByText = (text: string): IResponseClubes => {
   const res = clubes.filter((club: IClub) =>
     club.name.toLowerCase().includes(text.toLowerCase())
   );
-  return res;
+  return {
+    msg: "Clubes filter",
+    clubes: res,
+  };
 };

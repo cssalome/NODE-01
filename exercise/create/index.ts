@@ -6,20 +6,19 @@ export interface IClub {
   name: string;
 }
 
-interface IResponse extends IClub {
+export interface IResponse {
   msg: string;
+  club: IClub | undefined;
 }
+
 export const clubes: IClub[] = [];
 
 const createClub = (id: number, name: string): IResponse => {
   clubes.push({ id, name });
-  return { msg: "club creado exitosamente", name, id };
+  return {
+    msg: "Create club",
+    club: { name, id },
+  };
 };
-
-// // Desafio: La estructura de la respuesta  deberia ser la {msg: '', value: 'Boca Jrs', id: 1}
-// const CrateResponce = (msg: string, value: string, id: number): IResponce => {
-//   clubes.push({ id, name });
-//   return { msg: "Club successfuly created", name, id };
-// };
 
 export default createClub;

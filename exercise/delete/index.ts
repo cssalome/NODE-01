@@ -1,25 +1,18 @@
-import { IClub, clubes } from "../create";
-
-export interface IResponse {
-  msg: string;
-  status: boolean;
-}
+import { clubes, IResponse, IClub } from "../create";
 
 const deleteClub = (id: number): IResponse => {
-  //posicion
-  //splice a esa posicion
-  const pos = clubes.findIndex((club: IClub) => club.id === id);
-
-  if (pos === -1) {
+  const posClub = clubes.findIndex((club: IClub) => club.id === id);
+  if (posClub === -1) {
     return {
-      msg: "Club inválido",
-      status: false,
+      msg: "Id club not exist",
+      club: undefined,
     };
   } else {
-    clubes.splice(pos, 1);
+    const backup = clubes[posClub];
+    clubes.splice(posClub, 1);
     return {
-      msg: "Club borrado exitosamente",
-      status: true,
+      msg: "Club delete",
+      club: backup,
     };
   }
 };

@@ -1,5 +1,13 @@
 import { clubes, IClub } from "../create";
 
-export const findAll = (): IClub[] => {
-  return clubes;
+export interface IResponseClubes {
+  msg: string;
+  clubes: IClub[];
+}
+
+export const findAll = (): IResponseClubes => {
+  return {
+    msg: "Return all clubes",
+    clubes,
+  };
 };
